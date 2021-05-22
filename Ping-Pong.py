@@ -37,13 +37,7 @@ class Player(GameSprite):
             self.rect.y += self.speed
     
     def update2(self):
-        keys_pressed = key.get_pressed()
-
-        if keys_pressed[K_w] and self.rect.y > 0:
-            self.rect.y -= self.speed
-
-        if keys_pressed[K_s] and self.rect.y < 400:
-            self.rect.y += self.speed
+        self.rect.y = ball.rect.y
 
 
 racket1 = Player("rocket.png", 5, 250, 5, 50, 150)
