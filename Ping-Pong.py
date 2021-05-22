@@ -49,7 +49,7 @@ class Player(GameSprite):
 racket1 = Player("rocket.png", 5, 250, 5, 50, 150)
 racket2 = Player("rocket.png", 645, 250, 5, 50, 150)
 
-ball = GameSprite("ball.png", 330, 230, 5, 40, 40)
+ball = GameSprite("ball.png", 330, 230, 8, 40, 40)
 
 window = display.set_mode((700, 500))
 display.set_caption('Ping-Pong')
@@ -67,8 +67,9 @@ font = font.SysFont("Arial", 40)
 win1 = font.render('Player 1 wins!', True, (255, 0, 0))
 win2 = font.render('Player 2 wins!', True, (255, 0, 0))
 
-speed_x = 5
-speed_y = 5
+speed_x = 3
+speed_y = 3
+score = 0
 
 while game:
     
@@ -98,6 +99,11 @@ while game:
 
         if sprite.collide_rect(racket1, ball) or sprite.collide_rect(racket2, ball):
             speed_x *= -1
+            score += 1
+
+        if score >= 3 and speed_x > 0:
+            speed_x += 3
+            score = 0
 
         racket1.reset()
         racket2.reset()
