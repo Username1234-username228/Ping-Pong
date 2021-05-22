@@ -67,8 +67,8 @@ font = font.SysFont("Arial", 40)
 win1 = font.render('Player 1 wins!', True, (255, 0, 0))
 win2 = font.render('Player 2 wins!', True, (255, 0, 0))
 
-speed_x = 3
-speed_y = 3
+speed_x = 5
+speed_y = 5
 
 while game:
     
